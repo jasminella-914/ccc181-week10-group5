@@ -32,7 +32,7 @@ npm run build        # must finish with no errors before you submit
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
 | 1 | Daniela Rose J. Suico | jasminella-914 | `base.css` | Added the viewport meta tag. Wrote the phone layout, the 768px container padding, the 1024px two-column layout with the larger heading and visible list, and the 1280px `max-width: 1200px` centered container. |
-| 2 | | | `nav.css` | |
+| 2 | Jessanie L. Sacabin| jessaniesacabin | `nav.css` | Edited `nav.css` to style the mobile menu navigation, setup flex box layout, and added responsive `min-width` breakpoints for tablet and desktop screens. |
 | 3 | Norjane B. Lentija | norjane11 | `form.css` | Styled the login card in form.css using default phone rules, adjusted the form options and alt-actions for 768px screens, and updated card padding and title font size at 1024px. |
 
 ## Experiment 0: the page without the viewport tag

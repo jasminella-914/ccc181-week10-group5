@@ -39,7 +39,107 @@
    TODO .footer-copy          margin-top 1rem; font-size 0.875rem
    -------------------------------------------------------------------- */
 
-
+.site-header {
+  background: var(--navy);
+  color: #fff;
+}
+ 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0.5rem;
+}
+ 
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+}
+ 
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+.nav-list a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+ 
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: var(--navy-hover);
+  outline: 2px solid var(--gold);
+}
+ 
+.navbar__brand:focus-visible {
+  outline: 2px solid var(--gold);
+  border-radius: var(--radius);
+}
+.site-footer {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.5rem 0 1rem;
+}
+ 
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+ 
+.footer-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  color: var(--gold);
+}
+ 
+.footer-col p {
+  margin: 0 0 0.25rem;
+  overflow-wrap: anywhere; /* long e-mail never causes sideways scroll */
+}
+ 
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+.footer-links a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  color: #fff;
+}
+ 
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold);
+}
+ 
+.footer-links a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+ 
+.footer-copy {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
 
 
 /* ---- 2. 768px and up (tablets) ---------------------------------------
@@ -48,18 +148,28 @@
                               align-items: center   (brand LEFT, links RIGHT)
         .nav-list             flex-direction: row; gap: 0.5rem   (links in ONE row)
    -------------------------------------------------------------------- */
-
-
-
-
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .nav-list {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
 /* ---- 3. 1024px and up (laptops) --------------------------------------
    TODO @media (min-width: 1024px)
         .footer-grid          THREE equal columns: repeat(3, 1fr); gap 2rem
    -------------------------------------------------------------------- */
-
-
-
-
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
 /* ---- 4. 1280px and up ------------------------------------------------
    Nothing new here: .container (Member 1) keeps the content centered.
    -------------------------------------------------------------------- */

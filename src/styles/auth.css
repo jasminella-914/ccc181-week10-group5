@@ -1,0 +1,40 @@
+
+.auth-message {
+  margin: 0 0 1rem;
+  padding: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  overflow-wrap: anywhere;
+}
+
+.auth-message--error {
+  color: var(--error);
+  background: #fdecef;
+  border-color: var(--error);
+}
+
+
+.welcome__title {
+  overflow-wrap: anywhere; 
+}
+
+.welcome__email {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.btn--primary:disabled,
+.btn--primary:disabled:hover {
+  background: var(--navy);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ---- 2. 768px and up (tablets) --------------------------------------- */
+@media (min-width: 768px) {
+  .welcome .btn {
+    width: auto;
+    min-width: 10rem;
+  }
+}

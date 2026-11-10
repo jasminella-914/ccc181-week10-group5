@@ -99,6 +99,7 @@ export async function login(email: string, password: string): Promise<LoginRespo
   if (status === 400 || status === 401) {
     throw new ApiError('unauthorized', 'Wrong email or password');
   }
+  console.error('Login failed:', status, data); // temporary, remove later
   throw new ApiError('server', `Unexpected status ${status}`);
 }
 

@@ -74,3 +74,58 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 > The viewport meta tag is required, or the phone layout never applies.
 > We used Grid for page-level layouts (the login layout and footer) and Flexbox for components (the navbar, form rows and buttons). Making every tap target at least 48px tall and giving every hover style a focus-visible style made the page easier to use.
 > Working in separate CSS files and merging through reviewed pull requests meant we had no CSS conflicts, and each member's contribution showed in the commit history.
+
+
+## Part 2: Backend (Weeks 12-13)
+
+### How to run (two terminals)
+
+**Terminal 1: the backend**
+
+```bash
+cd server
+npm install
+copy .env.example .env      # Mac/Linux: cp .env.example .env   then edit the values
+npm start                   # prints: API running on http://localhost:3000
+```
+
+**Terminal 2: the front end (project root)**
+
+```bash
+npm install
+copy .env.example .env      # Mac/Linux: cp .env.example .env
+npm run dev                 # open http://localhost:5173
+```
+
+Restart `npm run dev` after editing `.env`. The real `.env` files are NOT on GitHub; only the two `.env.example` files are.
+
+**Demo account:** `student@campusconnect.test` / `Campus26` (name: Demo Student)
+
+| File | Settings |
+| --- | --- |
+| `server/.env.example` | `PORT`, `JWT_SECRET`, `CLIENT_ORIGIN` |
+| `.env.example` (project root) | `VITE_API_URL` |
+
+### API summary
+
+Full details, examples and the events design are in [`docs/API-SPEC.md`](docs/API-SPEC.md).
+
+| Method | Endpoint | Purpose | Success | Errors |
+| --- | --- | --- | --- | --- |
+| GET | `/api/v1/health` | Checks that the API is running | 200 | none |
+| POST | `/api/v1/sessions` | Logs in | 200 | 400, 401 |
+| GET | `/api/v1/users/me` | Returns the logged-in user (needs a token) | 200 | 401 |
+
+### Who did what in Part 2
+
+| Member | Name | GitHub username | What I did in Part 2 |
+| --- | --- | --- | --- |
+| 1 | Daniela Rose J. Suico | jasminella-914 | Express setup, `.env`, CORS, JSON, demo users with bcrypt, `POST /api/v1/sessions` with validation and token |
+| 2 | Jessanie Sacabin | jessaniesacabin | `GET /api/v1/users/me` with token middleware, 404 and 500 handlers, `docs/API-SPEC.md`, Postman collection and screenshots |
+| 3 | Norjane Lentija | norjane11 | `.env`, `src/api/auth.ts`, submit handler with Loading/Success/Error, Welcome screen, refresh and Log out, `auth.css` |
+
+### Screenshots
+
+In `screenshots/`: `postman-health.png`, `postman-login-200.png`, `postman-login-401.png`,
+`postman-me-401.png`, `login-fail-360.png`, `login-success-360.png`.
+

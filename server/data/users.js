@@ -13,4 +13,9 @@ function findByEmail(email) {
   return users.find((user) => user.email === email);
 }
 
-module.exports = { findByEmail };
+function toPublic(user) {
+  return { id: user.id, name: user.name, email: user.email };
+}
+
+module.exports = { findByEmail, toPublic};
+
